@@ -1,0 +1,436 @@
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AERIS</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: Arial;
+      margin: 0;
+      padding: 0;
+    }
+    .section1 {
+      background-color: #56B2FE;
+      color: #ffffff;
+      height: 30vh;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+    }
+    .section2 {
+      background-color: white; /* Color de fondo */
+      color: #4267FE;
+      height:50vh;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+   .section3 {
+      background-color: 0872C9; /* Color de fondo */
+      color: #4267FE;
+      height: 50vh;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    h1 {
+      font-size: 65px;
+     font-family: Platino Linotype;
+    }
+      h5 {
+      font-size: 25px;
+     font-family: Platino Linotype;
+     color: black;
+    }
+
+    p {
+      font-size: 16px;
+     font-family: Courier New;
+     color=black;
+    }
+    h1, p {
+      margin: 0;
+    }
+    .my-button {
+      background-color: #239afd;
+      color: WHITE;
+      padding: 15px 20px;
+      border: black;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .my-button:hover {
+      background-color: #0870c7;
+    }
+    .toggle-text {
+      font-size: 16px;
+      color: black;
+font-family: Courier New;
+      display: none;
+      align-items: justified;
+    }
+    .infocontainer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 20px;  
+      text-align: center;
+    }
+    .inbox {
+      width: 40%;
+      max-width: 300px;
+      height: 120px;
+      margin: 20px auto;
+      background-color: #d1ecf1;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+      color: #333;
+      text-align: center;
+     
+    }
+
+    .inboxt1 {
+      width: 100%;
+      max-width: 1000px;
+      height: 55px;
+      margin: 20px auto;
+      background-color: #d1ecf1;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+      color: #333;
+      text-align: center;
+      font-size: 18px;
+    }
+.inboxt2 {
+      width: 100%;
+      max-width: 1000px;
+      height: 600px;
+      margin: 20px auto;
+      background-color: #d1ecf1;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+      color: #333;
+      text-align: center;
+      font-size: 18px;
+    }
+ .inboxt3 {
+      width: 100%;
+      max-width: 1000px;
+      height: 85px;
+      margin: 20px auto;
+      background-color: #d1ecf1;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+      color: #333;
+      text-align: center;
+      font-size: 18px;
+    }
+ .inboxt4 {
+      width: 100%;
+      max-width: 1000px;
+      height: 230px;
+      margin: 20px auto;
+      background-color: #d1ecf1;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+      color: #333;
+      text-align: center;
+      font-size: 18px;
+    }
+ .inboxt5{
+      width: 100%;
+      max-width: 1000px;
+      height: 265px;
+      margin: 20px auto;
+      background-color: #d1ecf1;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+      color: #333;
+      text-align: center;
+      font-size: 18px;
+    }
+     .inboxt10{
+      width: 100%;
+      max-width: 400px;
+      height: 45px;
+      margin: 20px auto;
+      background-color: #77E7B9;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+      color: #333;
+      text-align: center;
+      font-size: 18px;
+    }
+     .inboxt11{
+      width: 100%;
+      max-width: 700px;
+      height: 125px;
+      margin: 20px auto;
+      background-color: #77E7B9;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+      color: #333;
+      text-align: center;
+      font-size: 18px;
+    }
+    .inbox1 {
+      width: 40%;
+      max-width: 300px;
+      height: 1px;
+      margin: 2px auto;
+      background-color: white;
+      padding: 2px;
+      border-radius: 15px;
+      box-shadow: 2px 2px 1px rgba(0,0,0,0.1);
+      text-align: center;
+      color: white;
+    }
+
+p2 {
+font-size: 20px;
+     font-family: Courier New;
+font-weight: bold;
+}
+p4 {
+font-size: 30px;
+     font-family: Courier New;
+
+}
+p0 {
+font-size: 10px;
+     font-family: Courier New;
+
+}
+  h2{
+      font-size: 35px;
+     font-family: Platino Linotype;
+     color: WHITE;
+}
+     .my-button1 {
+      background-color: #07B06B;
+      Color:white;
+      padding: 15px 20px;
+      border: black;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .my-button1:hover {
+      background-color: #15A56B;
+    
+    }
+
+.infocontainer1 {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 20px;  
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="section1">
+    <br><br><br><br>
+    <h1>A E R I S</h1>
+<br>
+    <marquee behavior="scroll" direction="left" scrollamount="10.0">
+      <p4>"Aire puro, mente clara"</p4>
+    </marquee>
+  </div>
+  
+<div class="section2">
+    <h5>• INFORMACIÓN GENERAL •</h5>
+
+
+    <button class="my-button" id="button1">¿Qué es AERIS?</button> 
+  <div id="inbox01" class="infocontainer" style="display:none;"> 
+   <div class="inboxt1"> 
+      <p> 
+AERIS es un proyecto enfocado a identificar los niveles elevados de CO2 que impactan la salud física, mental y 
+      el rendimiento cognitivo de los estudiantes y determinar si un sistema de recirculación de aire puede reducir los niveles de CO2 y mejorar el bienestar en el aula.<br><br> 
+</p>
+    </div> 
+</div>
+
+
+    <button class="my-button" id="button2">Objetivos</button> 
+    <div id="inbox02" class="infocontainer" style="display:none;">
+<div class="inboxt2">
+      <p2> OBJETIVO GENERAL: <br><br> </p2>
+     <p> • Desarrollar y validar un prototipo de circuito electrónico capaz de medir y registrar con precisión los niveles de CO2 en espacios cerrados,
+      con el fin de proporcionar datos objetivos para la evaluación y mejora de la calidad del aire y el rendimiento cognitivo en el entorno escolar. <br><br> </p>
+      <p2> OBJETIVOS PARTICULARES: <br><br> </p2>
+     <p> • Diseñar un circuito electrónico que integre un sensor de CO2 de alta precisión, un microcontrolador para el procesamiento de datos y 
+      un sistema de almacenamiento para el registro de mediciones. <br><br> 
+      • Calibrar y validar el prototipo en condiciones controladas para garantizar la precisión y fiabilidad de las mediciones de CO2. <br><br> 
+      • Implementar un sistema de visualización de datos en tiempo real que permita a los usuarios monitorear los niveles de CO2 y recibir alertas en caso 
+      de superar los umbrales recomendados.<br><br> 
+      • Realizar pruebas piloto en aulas escolares para recopilar datos sobre los niveles de CO2 en diferentes condiciones de ocupación y ventilación. <br><br> 
+      • Analizar los datos recopilados para identificar patrones y tendencias en los niveles de CO2 y su relación con el rendimiento cognitivo de los estudiantes. <br><br> 
+      • Elaborar un informe técnico que documente el diseño, la construcción, la validación y los resultados del prototipo, así como recomendaciones 
+      para la implementación de sistemas de monitoreo de CO2 en entornos escolares. <br><br> 
+      • Concienciar a la comunidad educativa sobre la importancia de la calidad del aire interior y su impacto en la salud y el rendimiento académico, mediante 
+      la difusión de los resultados del proyecto. <br><br> 
+      • Proporcionar información valiosa que sirva para que los entes encargados de los recintos escolares tomen acciones pertinentes para mejorar la calidad del aire. <br><br><br></p>
+    </div> </div>
+
+    <button class="my-button" id="button3">Justificación</button> 
+    <div id="inbox03" class="infocontainer" style="display:none;">
+ <div class="inboxt3"> <p>
+       La justificación de este proyecto radica en su potencial para transformar el entorno educativo, abordando una problemática subestimada pero 
+      de gran impacto: la calidad del aire interior y su influencia en el rendimiento cognitivo. Al implementar un sistema de medición y monitoreo de CO2 en 
+      las aulas, se busca generar un cambio paradigmático en la forma en que se concibe el espacio educativo, priorizando la salud y 
+      el bienestar de los estudiantes y educadores. <br><br>
+    </p>
+</div>
+</div>
+    <button class="my-button" id="button4">Afectaciones por altos niveles de CO2</button>
+    <div id="inbox04" class="infocontainer" style="display:none;" > 
+<div class="inboxt4">
+<p>
+      • Disminución de la capacidad de concentración: El exceso de CO2 puede provocar somnolencia, fatiga y dificultad para mantener la atención, 
+      lo que afecta negativamente el aprendizaje y el rendimiento académico. <br><br>
+      • Deterioro de la toma de decisiones: Estudios han mostrado que niveles elevados de CO2 pueden reducir la capacidad para tomar decisiones 
+      complejas y resolver problemas, habilidades esenciales en el entorno educativo. <br><br>
+      • Reducción de la memoria y el aprendizaje: La exposición prolongada a altos niveles de CO2 puede afectar la memoria de trabajo y la capacidad 
+      para adquirir nuevos conocimientos. <br><br>
+      • Aumento del ausentismo: La incomodidad y los síntomas físicos asociados con la mala calidad del aire pueden llevar a un mayor ausentismo escolar. <br><br>
+    </p> 
+</div>
+</div>
+    <button class="my-button" id="button5">Beneficios de medir el CO2</button>  <br><br><br>
+    <div id="inbox05" class="infocontainer" style="display:none;">
+<div class="inboxt5">
+     <p> • Optimización del rendimiento académico: Monitorear y controlar los niveles de CO2 permite crear un ambiente de aprendizaje más saludable y 
+      propicio para el desarrollo cognitivo. <br><br>
+      • Mejora de la salud y el bienestar: Mantener una buena calidad del aire reduce la incidencia de dolores de cabeza, irritación de las vías respiratorias y 
+      otros síntomas asociados con la mala ventilación. <br><br>
+      • Detección de problemas de ventilación: La medición de CO2 puede ayudar a identificar aulas con ventilación deficiente, lo que permite tomar medidas correctivas 
+      para mejorar la calidad del aire. <br><br>
+      • Concienciación y educación: La implementación de un sistema de monitoreo de CO2 puede servir como herramienta educativa para concienciar 
+      a estudiantes y profesores sobre la importancia de la calidad del aire interior. <br><br>
+      • Creación de espacios de aprendizaje saludables: Al garantizar una ventilación adecuada, se promueve un ambiente escolar más seguro y confortable, lo 
+      que beneficia tanto a estudiantes como a profesores. <br><br> </p>
+</div>
+</div>
+    
+  
+  <script>
+    // Funciones para mostrar/ocultar secciones
+    function toggleText(id) {
+      var text = document.getElementById(id);
+      if (text.style.display === "block") {
+        text.style.display = "none";
+      } else {
+        document.querySelectorAll('.toggle-text').forEach(el => el.style.display = "none");
+        text.style.display = "block";
+      }
+    }
+    
+    function infocontainer(id) {
+      var box = document.getElementById(id);
+      if (box.style.display === "block") {
+        box.style.display = "none";
+      } else {
+        document.querySelectorAll('.infocontainer').forEach(el => el.style.display = "none");
+        box.style.display = "block";
+      }
+    }
+    
+    // Asignación de eventos a los botones
+    document.getElementById("button1").addEventListener("click", function() {
+      infocontainer("inbox01");
+    });
+    document.getElementById("button2").addEventListener("click", function() {
+      infocontainer("inbox02");
+    });
+    document.getElementById("button3").addEventListener("click", function() {
+      infocontainer("inbox03");
+    });
+    document.getElementById("button4").addEventListener("click", function() {
+      infocontainer("inbox04");
+    });
+    document.getElementById("button5").addEventListener("click", function() {
+      infocontainer("inbox05");
+    });
+    document.getElementById("button6").addEventListener("click", function() {
+      toggleText("text6");
+    });
+    
+    // Conexión al WebSocket en el puerto 81
+    const socket = new WebSocket("ws://" + location.hostname + ":81/");
+    socket.onmessage = function(event) {
+      const data = event.data;
+      // Se espera formato: "CO₂: <valor>, Temp: <valor>, Hum: <valor>"
+      const parts = data.split(",");
+      if (parts.length >= 3) {
+        const co2_value = parts[0].replace("CO₂:", "").trim();
+        const temperature = parts[1].replace("Temp:", "").trim();
+        const hum = parts[2].replace("Hum:", "").trim();
+        document.getElementById("prueba1").innerText = co2_value + " ppm";
+        document.getElementById("Temp1").innerText = temperature + " °C";
+        document.getElementById("Hume1").innerText = hum + " %";
+      } else {
+        console.error("Formato de datos incorrecto:", data);
+      }
+    };
+  </script>
+<div class="section3">
+<BR> 
+<h2> ALARMA "CallMeBot" </h2>
+<br><br> 
+<button class="my-button1" id="button10">Tutorial de configuración</button>
+    <div id="inbox10" class="infocontainer1" style="display:none;" > 
+<div class="inboxt10"> 
+<p> <BR>
+      LINK DEL VIDEO
+    </p> 
+</div> </div> <br><br><br><br><br><br>
+<script>
+    // Funciones para mostrar/ocultar secciones
+    function toggleText(id) {
+      var text = document.getElementById(id);
+      if (text.style.display === "block") {
+        text.style.display = "none";
+      } else {
+        document.querySelectorAll('.toggle-text').forEach(el => el.style.display = "none");
+        text.style.display = "block";
+      }
+    }
+    
+    function infocontainer(id) {
+      var box = document.getElementById(id);
+      if (box.style.display === "block") {
+        box.style.display = "none";
+      } else {
+        document.querySelectorAll('.infocontainer').forEach(el => el.style.display = "none");
+        box.style.display = "block";
+      }
+    }
+    
+    // Asignación de eventos a los botones
+    document.getElementById("button10").addEventListener("click", function() {
+      infocontainer("inbox10");
+    });
+	document.getElementById("button11").addEventListener("click", function() {
+      infocontainer("inbox11");
+    });
+</script>
+</body>
+</html>
